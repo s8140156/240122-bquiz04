@@ -35,7 +35,7 @@ body
 	margin:10px auto 10px auto;
 	color:#65350A;
 }
-.ct
+.ct /*常用*/
 {
 	text-align:center;
 }
@@ -58,29 +58,29 @@ body
 	padding:10px;
 	text-align:center;
 }
-.all
+.all /*用在table格式 觀察css上下設定*/
 {
 	width:90%;
 	margin:10px auto 10px auto;
 }
-.all td
+.all td /*常用*/
 {
 	min-width:50px; /*太大修小點*/
 	padding:10px;
 }
-.tt
+.tt /*常用*/
 {
 	background:#EF7429;
 }
-.tt td
+.tt td /*常用*/
 {
 	background:#EF7429;
 }
-.pp
+.pp /*常用*/
 {
 	background:#EFCA85;
 }
-.pp td
+.pp td /*常用*/
 {
 	background:#EFCA85;
 }
