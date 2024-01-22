@@ -19,7 +19,7 @@
 			$a=rand(10,99);
 			$b=rand(10,99);
 			$_SESSION['ans']=$a+$b; //存session at server client端看不到
-			echo $a . "+" .$b . " =" //注意字串寫法 可以讓=排版好看
+			echo $a . "+" .$b . " ="; //注意字串寫法 可以讓=排版好看
 			?>
 			<input type="text" name="chk" id="chk"></td>
 	</tr>
