@@ -21,7 +21,7 @@
 			$_SESSION['ans']=$a+$b; //存session at server client端看不到
 			echo $a . "+" .$b . " ="; //注意字串寫法 可以讓=排版好看
 			?>
-			<input type="text" name="chk" id="chk"></td>
+			<input type="text" name="ans" id="ans"></td>
 	</tr>
 </table>
 <div class="ct"><button onclick="login('admin')">確認</button></div>
