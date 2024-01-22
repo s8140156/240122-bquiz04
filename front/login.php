@@ -10,7 +10,7 @@
 	</tr>
 	<tr>
 		<td class="tt ct">密碼</td>
-		<td class="pp"><input type="text" name="pw" id="pw"></td>
+		<td class="pp"><input type="password" name="pw" id="pw"></td>
 	</tr>
 	<tr>
 		<td class="tt ct">驗證碼</td>
@@ -21,7 +21,27 @@
 			$_SESSION['ans']=$a+$b; //存session at server client端看不到
 			echo $a . "+" .$b . " ="; //注意字串寫法 可以讓=排版好看
 			?>
-			<input type="text" name="chk" id="chk"></td>
+			<input type="text" name="ans" id="ans"></td>
 	</tr>
 </table>
-<div class="ct"><button>確認</button></div>
+<div class="ct">
+	<button onclick="login('mem')">確認</button>
+</div>
+<script>
+	function login(table){
+		$.get("./api/chk_ans.php",{ans:$("#ans").val()},(chk)=>{
+			if(parseInt(chk)==0){
+				alert("驗證碼錯誤，請重新輸入")
+			}else{
+				$.post("./api/chk_pw.php",{table,acc:$("#acc").val(),pw:$("#pw").val()},(res)=>{
+					if(parseInt(res)==0){
+						alert("帳號密碼錯誤，請重新輸入")
+					}else{
+						location.href='index.php';
+					}
+				})
+			}
+
+		})
+	}
+</script>
