@@ -65,7 +65,7 @@ body
 }
 .all td
 {
-	min-width:100px;
+	min-width:50px; /*太大修小點*/
 	padding:10px;
 }
 .tt
