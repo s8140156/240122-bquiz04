@@ -31,7 +31,7 @@
                 <?php
                  }else{
                 ?>
-                <a href="?do=login">會員登入</a> | <!--原畫面-->
+                <a href="?do=login">會員登入</a> |
                 <?php
                 }
                 ?>
