@@ -24,9 +24,9 @@
 	</tr>
 </table>
 <script>
-	getTypes(0)
+	getTypes(0) //因為在中分類裡面放的選單是大分類big_id為0
 
-	function getTypes(big_id){
+	function getTypes(big_id){ //取得選單(放上大分類的選單)
 		$.get("./api/get_types.php",{big_id},(types)=>{
 			$('#bigs').html(types)
 		})
@@ -35,7 +35,7 @@
 
 	function addType(type){
 		let name
-		let big_idl
+		let big_id
 		switch(type){
 			case 'big':
 				name=$('#big').val();
