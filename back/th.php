@@ -6,6 +6,7 @@
 	<select name="big" id="bigs"></select>
 	<input type="text" name="mid" id="mid"><button>新增</button>
 </div>
+<!-- table.all>(tr.tt>td+td.ct>button*2)+(tr.tt.ct>td*2) -->
 <table class="all">
 	<tr class="tt">
 		<td>流行皮件</td>
