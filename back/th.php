@@ -38,6 +38,16 @@ foreach($bigs as $big){
 <script>
 	getTypes(0) //因為在中分類裡面放的選單是大分類big_id為0
 
+	function edit(dom,id){ //透過DOM traveling找節點並修改文字
+		let name=prompt("請輸入您要修改的分類名稱:",`${$(dom).parent().prev().text()}`)
+		if(name!=null){
+			$.post("./api/save_type.php",{name,id},()=>{
+				$(dom).parent().prev().text(name)
+				// location.reload();
+			})
+		}
+	}
+
 	function getTypes(big_id){ //取得選單(放上大分類的選單)
 		$.get("./api/get_types.php",{big_id},(types)=>{
 			$('#bigs').html(types)
@@ -64,7 +74,7 @@ foreach($bigs as $big){
 	}
 </script>
 <h2 class="ct">商品管理</h2>
-<div class="ct"><button>新增商品</button></div>
+<div class="ct"><button onclick="location.href">新增商品</button></div>
 <table class="all">
 	<tr class="tt ct">
 		<th>編號</th>
