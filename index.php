@@ -8,6 +8,7 @@
 
     <title>┌精品電子商務網站」</title>
     <link href="./css/css.css" rel="stylesheet" type="text/css">
+    <script src="./js/jquery-3.4.1.min.js"></script> <!--因為會寫jq程式 原先位置在/body上方 會讀取不到 換到上面-->
     <script src="./js/js.js"></script>
 </head>
 
@@ -73,7 +74,7 @@
         <div id="bottom" style="line-height:70px;background:url(./icon/bot.png); color:#FFF;" class="ct">
             頁尾版權 : <?=$Bottom->find(1)['bottom'];?></div>
     </div>
-    <script src="./js/jquery-3.4.1.min.js"></script>
+    <!-- <script src="./js/jquery-3.4.1.min.js"></script> --> <!--改到上面-->
 </body>
 
 </html>
