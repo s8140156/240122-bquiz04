@@ -44,7 +44,9 @@ body
 	display:inline-block;
 	width:65%;
 	padding:2%;
-	min-height:550px;
+	/* min-height:550px; */
+	height:550px; /*改固定高度*/
+	overflow: auto; /*多出來用scroll*/
 	border:#000 1px solid;
 }
 #bottom

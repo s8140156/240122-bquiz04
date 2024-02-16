@@ -66,7 +66,7 @@
                         $mids=$Type->all(['big_id'=>$big['id']]);
                         foreach($mids as $mid){
                     ?>
-                    <a href="?type=<?=$mid['id'];?>"><?=$mid['name'];?>(<?=$Goods->count(['sh'=>1,'big'=>$mid['id']]);?>)</a>
+                    <a href="?type=<?=$mid['id'];?>"><?=$mid['name'];?>(<?=$Goods->count(['sh'=>1,'mid'=>$mid['id']]);?>)</a>
                     <?php
                         }
                     }
