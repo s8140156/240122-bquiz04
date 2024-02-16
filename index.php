@@ -53,21 +53,20 @@
         </div>
         <div id="left" class="ct">
             <div style="min-height:400px;"> <!--放選單-->
-            <a>全部商品</a>
+            <a href="?type=0">全部商品(<?=$Goods->count(['sh'=>1]);?>)</a> <!--使用a tag可以使用預設css style-->
             <?php
             $bigs=$Type->all(['big_id'=>0]);
             foreach($bigs as $big){
-
               ?>
-              <div class="ww">
-                  <a href=""><?=$big['name'];?></a>
+              <div class="ww"> <!--這邊使用到css div.ww:hover > div .s樣式 所以html可以這樣導入後樣式出現;然後有增加次選單顏色(容易分辨)使用加上#left讓權重跟上層一樣才不會樣式被吃掉-->
+                  <a href="<?=$big['id'];?>"><?=$big['name'];?>(<?=$Goods->count(['sh'=>1,'big'=>$big['id']]);?>)</a>
                   <div class="s">
                     <?php
                     if($Type->count(['big_id'=>$big['id']])>0){
                         $mids=$Type->all(['big_id'=>$big['id']]);
                         foreach($mids as $mid){
                     ?>
-                    <a href=""><?=$mid['name'];?></a>
+                    <a href="<?=$mid['id'];?>"><?=$mid['name'];?>(<?=$Goods->count(['sh'=>1,'big'=>$mid['id']]);?>)</a>
                     <?php
                         }
                     }
