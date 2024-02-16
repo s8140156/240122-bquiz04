@@ -1,6 +1,6 @@
 <?php
-	if(isset($_GET['id'])){ //
-		$_SESSION['cart'][$_GET['id']]=$_GET['qt'];
+	if(isset($_GET['id'])){ 
+		$_SESSION['cart'][$_GET['id']]=$_GET['qt']; //[$_GET['id']]是用id代表索引
 	}
 if(!isset($_SESSION['mem'])){ //因為如果存在 要做很多事, 所以反過來先寫 else後面再去執行落落長
 	to('?do=login');
@@ -10,7 +10,7 @@ echo "<h2 class='ct'>{$_SESSION['mem']}的購物車</h2>";
 
 if(empty($_SESSION['cart'])){ //這邊原本以!isset判斷=>改empty 這樣當商品全部刪除 才能show下面
 	echo "<h2 class='ct'>購物車中尚無商品</h2>";
-}else{
+// }else{
 	// dd($_SESSION['cart']);
 }
 ?>
@@ -25,7 +25,7 @@ if(empty($_SESSION['cart'])){ //這邊原本以!isset判斷=>改empty 這樣當�
 		<td>刪除</td>
 	</tr>
 <?php
-foreach($_SESSION['cart'] as $id=>$qt){
+foreach($_SESSION['cart'] as $id => $qt){
 	$goods=$Goods->find($id);
 	?>
 	<tr class="pp ct">
@@ -42,8 +42,8 @@ foreach($_SESSION['cart'] as $id=>$qt){
 ?>
 </table>
 <div class="ct">
-	<img src="./icon/0411.jpg" alt="">
-    <img src="./icon/0412.jpg" alt="">
+	<img src="./icon/0411.jpg" onclick="location.href='index.php'">
+    <img src="./icon/0412.jpg" onclick="location.href='?do=checkout'">
 </div>
 <script>
 	function delCart(id){

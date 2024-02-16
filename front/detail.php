@@ -27,7 +27,7 @@ $goods=$Goods->find($_GET['id']);
 	.info div{
 		border: 1px solid #fff;
 		border-left: 0px;
-		border-bottom: 0px;
+		border-top: 0px;
 		flex-grow: 1; /*最後一格自動延展?*/
 	}
 	.info div:nth-child(1){
@@ -38,18 +38,19 @@ $goods=$Goods->find($_GET['id']);
 <h2 class="ct"><?=$goods['name'];?></h2>
 
 <div class="item">
-		<div class="img">
-			<a href="?id=<?=$goods['id'];?>"></a>
+	<div class="img">
+		<a href="?id=<?=$goods['id'];?>">
 			<img src="./img/<?=$goods['img'];?>" style="width:90%;height:200px">
-		</div>
-		<div class="info">
-			<div>分類: <?=$Type->find($goods['big'])['name'];?> > <?=$Type->find($goods['mid'])['name'];?></div>
-			<div>編號:<?=$goods['no'];?></div>
-			<div>價錢:<?=$goods['price'];?></div>
-			<div>詳細說明:<?=$goods['intro'];?></div>
-			<div>庫存量:<?=$goods['stock'];?></div>
-		</div>
+		</a>
 	</div>
+	<div class="info">
+		<div>分類: <?=$Type->find($goods['big'])['name'];?> > <?=$Type->find($goods['mid'])['name'];?></div>
+		<div>編號: <?=$goods['no'];?></div>
+		<div>價錢: <?=$goods['price'];?></div>
+		<div>詳細說明: <?=$goods['intro'];?></div>
+		<div>庫存量: <?=$goods['stock'];?></div>
+	</div>
+</div>
 	<div class="tt ct">
 		購買數量:
 		<input type="number" id="qt" value="1" style="width:50px">
@@ -59,6 +60,6 @@ $goods=$Goods->find($_GET['id']);
 		function buy(){
 			let id=<?=$_GET['id'];?>;
 			let qt=$('#qt').val()
-			location.href=`?do=buycart&id${id}&qt=${qt}`
+			location.href=`?do=buycart&id=${id}&qt=${qt}`
 		}
 	</script>

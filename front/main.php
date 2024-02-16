@@ -26,6 +26,7 @@ if($type==0){
 }
 
 ?>
+<h2><?=$nav;?></h2>
 <style>
 	.item{
 		width:80%;
@@ -50,14 +51,13 @@ if($type==0){
 	.info div{
 		border: 1px solid #999;
 		border-left: 0px;
-		border-bottom: 0px;
+		border-top: 0px;
 		flex-grow: 1; /*最後一格自動延展?*/
 	}
 	.info div:nth-child(1){
 		border-top:1px solid #999;
 	}
 </style>
-<h2><?=$nav;?></h2>
 <?php
 foreach($goods as $good){
 	?>
