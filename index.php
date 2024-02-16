@@ -59,14 +59,14 @@
             foreach($bigs as $big){
               ?>
               <div class="ww"> <!--這邊使用到css div.ww:hover > div .s樣式 所以html可以這樣導入後樣式出現;然後有增加次選單顏色(容易分辨)使用加上#left讓權重跟上層一樣才不會樣式被吃掉-->
-                  <a href="<?=$big['id'];?>"><?=$big['name'];?>(<?=$Goods->count(['sh'=>1,'big'=>$big['id']]);?>)</a>
+                  <a href="?type=<?=$big['id'];?>"><?=$big['name'];?>(<?=$Goods->count(['sh'=>1,'big'=>$big['id']]);?>)</a>
                   <div class="s">
                     <?php
                     if($Type->count(['big_id'=>$big['id']])>0){
                         $mids=$Type->all(['big_id'=>$big['id']]);
                         foreach($mids as $mid){
                     ?>
-                    <a href="<?=$mid['id'];?>"><?=$mid['name'];?>(<?=$Goods->count(['sh'=>1,'big'=>$mid['id']]);?>)</a>
+                    <a href="?type=<?=$mid['id'];?>"><?=$mid['name'];?>(<?=$Goods->count(['sh'=>1,'big'=>$mid['id']]);?>)</a>
                     <?php
                         }
                     }
@@ -74,8 +74,8 @@
                 </div>
               </div>
               <?php  
-            }
-            ?>
+                }
+                ?>
             </div>
             <span>
                 <div>進站總人數</div>
