@@ -1,6 +1,7 @@
 <?php
 	if(isset($_GET['id'])){ 
-		$_SESSION['cart'][$_GET['id']]=$_GET['qt']; //[$_GET['id']]是用id代表索引
+		$_SESSION['cart'][$_GET['id']]=$_GET['qt']; 
+		//[$_GET['id']]是用id代表索引;$_GET［id］作為陣列的 key，$_GET['qt'] 則是 value (key=>value)
 	}
 if(!isset($_SESSION['mem'])){ //因為如果存在 要做很多事, 所以反過來先寫 else後面再去執行落落長
 	to('?do=login');
