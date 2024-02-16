@@ -26,7 +26,7 @@ body
 	vertical-align:top;
 	border:#000 1px solid;
 }
-#left a
+#left a /*用在選單列, id權重最高 這樣寫其他的變化都無法影響*/
 {
 	display:block;
 	padding:20px 5px 20px 5px;
@@ -101,6 +101,9 @@ input[type=text],input[type=password]
 .s
 {
 	display:none;
+}
+#left .s a{ /*新增並加上#id left讓權重與id一樣才不會被蓋過*/
+	background-color: lightcoral;
 }
 div.ww:hover > div.s
 {
