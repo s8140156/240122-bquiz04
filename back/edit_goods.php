@@ -1,4 +1,7 @@
-<h2 class="ct">新增商品</h2>
+<h2 class="ct">修改商品</h2>
+<?php
+$goods=$Goods->find($_GET['id']);
+?>
 <form action="./api/save_goods.php" method="post" enctype="multipart/form-data">
 	<table class="all">
 		<tr>
@@ -15,23 +18,23 @@
 		</tr>
 		<tr>
 			<th class="tt ct">商品編號</th>
-			<td class="pp">完成分類後自動分配</td>
+			<td class="pp"><?=$goods['no'];?></td>
 		</tr>
 		<tr>
 			<th class="tt ct">商品名稱</th>
-			<td class="pp"><input type="text" name="name" value=""></td>
+			<td class="pp"><input type="text" name="name" value="<?=$goods['name'];?>"></td>
 		</tr>
 		<tr>
 			<th class="tt ct">商品價格</th>
-			<td class="pp"><input type="text" name="price" value=""></td>
+			<td class="pp"><input type="text" name="price" value="<?=$goods['price'];?>"></td>
 		</tr>
 		<tr>
 			<th class="tt ct">規格</th>
-			<td class="pp"><input type="text" name="spec" value=""></td>
+			<td class="pp"><input type="text" name="spec" value="<?=$goods['spec'];?>"></td>
 		</tr>
 		<tr>
 			<th class="tt ct">庫存量</th>
-			<td class="pp"><input type="text" name="stock" value=""></td>
+			<td class="pp"><input type="text" name="stock" value="<?=$goods['stock'];?>"></td>
 		</tr>
 		<tr>
 			<th class="tt ct">商品圖片</th>
@@ -39,11 +42,11 @@
 		</tr>
 		<tr>
 			<th class="tt ct">商品介紹</th>
-			<td class="pp"><textarea name="intro" style="width:80%;height:200px"></textarea></td>
+			<td class="pp"><textarea name="intro" style="width:80%;height:200px"><?=$goods['intro'];?></textarea></td>
 		</tr>
 	</table>
 	<div class="ct">
-		<input type="submit" value="新增">
+		<input type="submit" value="修改">
 		<input type="reset" value="重置">
 		<input type="button" value="返回" onclick="location.href='?do=th'">
 	</div>
