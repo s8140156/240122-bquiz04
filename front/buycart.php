@@ -11,9 +11,9 @@ echo "<h2 class='ct'>{$_SESSION['mem']}的購物車</h2>";
 
 if(empty($_SESSION['cart'])){ //這邊原本以!isset判斷=>改empty 這樣當商品全部刪除 才能show下面
 	echo "<h2 class='ct'>購物車中尚無商品</h2>";
-// }else{
+}else{ //如果不加上else 在buycart會出現undefined array key 這是因為受29行的影響
 	// dd($_SESSION['cart']);
-}
+
 ?>
 <table class="all">
 	<tr class="tt ct">
@@ -54,5 +54,9 @@ foreach($_SESSION['cart'] as $id => $qt){
 
 	}
 </script>
+
+<?php
+} //這是購物車無商品的結束 需要包到script結尾後
+?>
 
 
