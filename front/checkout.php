@@ -57,8 +57,10 @@ $sum+=$goods['price'] * $qt;
 </table>
 <div class="all ct tt">總價：<?=$sum;?>元</div>
 <div class="ct">
-	<input type="hidden" name="id" value="<?=$row['id'];?>">
+	<!-- <input type="hidden" name="id" value="<?=$row['id'];?>"> -->
+	<input type="hidden" name="total" value="<?=$sum;?>"> <!--增加hidden total放$sum欄位-->
 	<input type="submit" value="確定送出">
 	<input type="button" value="返回修改訂單" onclick="location.href='?do=buycart'">
 </div>
 </form>
+<!-- 從上面表單上可取得的欄位幾乎都有只剩總計(後面使用hidden total欄位存sum)及訂單編號(要新增)/cart,acc使用session來取得儲存 -->
