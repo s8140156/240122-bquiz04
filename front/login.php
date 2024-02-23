@@ -15,19 +15,23 @@
 	<tr>
 		<td class="tt ct">驗證碼</td>
 		<td class="pp">
-			<?php
-			$a=rand(10,99);
-			$b=rand(10,99);
-			$_SESSION['ans']=$a+$b; //存session at server client端看不到
-			echo $a . "+" .$b . " ="; //注意字串寫法 可以讓=排版好看
-			?>
-			<input type="text" name="ans" id="ans"></td>
+		<!-- 因為改轉到api/captcha去處理判別並由ajax前端處理 所以這邊不用打回資料 -->
+		<input type="text" name="ans" id="ans">
+		<img src="" id="captcha"><button onclick="captcha()">重新產生</button>
+			</td>
 	</tr>
 </table>
 <div class="ct">
 	<button onclick="login('mem')">確認</button>
 </div>
 <script>
+	captcha(); //要先執行一次 不然一開始畫面不會出來圖型檔喔
+	function captcha(){
+		$.get("./api/captcha.php",(img)=>{
+			// console.log(img)
+			$('#captcha').attr('src',img)
+		})
+	}
 	function login(table){
 		$.get("./api/chk_ans.php",{ans:$("#ans").val()},(chk)=>{
 			if(parseInt(chk)==0){
