@@ -30,8 +30,8 @@ $row=$Orders->find($_GET['id']);
 	</tr>
 	<tr>
 		<td class="tt ct">電子信箱</td>
-		<!-- <td class="pp"><input type="text" style="border:0;background:#EFCA85" name="email" value="<?=$row['email'];?>"></td> -->
-		<td class="pp"><?=$row['email'];?></td>
+		<td class="pp"><input type="text" style="border:0;background:#EFCA85" name="email" value="<?=$row['email'];?>"></td>
+		<!-- <td class="pp"><?=$row['email'];?></td> -->
 	</tr>
 </table>
 <table class="all">
@@ -57,7 +57,7 @@ foreach($_SESSION['cart'] as $id => $qt){
 		<td><?=$goods['price'] * $qt;?></td>
 	</tr>
 <?php
-$sum+=$goods['price'] * $qt;
+// $sum+=$goods['price'] * $qt;
 }
 ?>
 </table>
