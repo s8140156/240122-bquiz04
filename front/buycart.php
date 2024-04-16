@@ -13,6 +13,7 @@ if(empty($_SESSION['cart'])){ //這邊原本以!isset判斷=>改empty 這樣當�
 	echo "<h2 class='ct'>購物車中尚無商品</h2>";
 }else{ //如果不加上else 在buycart會出現undefined array key 這是因為受29行的影響
 	// dd($_SESSION['cart']);
+	// 加上else這段是預防購物車沒東西時會有錯誤訊息顯示(會造成使用者觀感不好)
 
 ?>
 <table class="all">
