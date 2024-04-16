@@ -21,7 +21,9 @@
 			<td class="pp ct"><?=$row['total'];?></td>
 			<td class="pp ct"><?=$row['acc'];?></td>
 			<td class="pp ct"><?=$row['name'];?></td>
-			<td class="pp ct"><?=date("Y-m-d",strtotime($row['orderdate']));?></td>
+			<td class="pp ct"><?=date("Y/m/d",strtotime($row['orderdate']));?></td>
+			<!-- 因為orderdate資料類型是timestamp(包含詳細時分秒)所以要用date()然後strtotime(orderdate)來擷取年月日格式 -->
+			<!-- 也可以用sub_str()擷取需要的欄位 -->
 			<td class="pp ct">
 			<?php	
 			echo "<button onclick='del(&#39;orders&#39;,{$row['id']})'>刪除</button>";
